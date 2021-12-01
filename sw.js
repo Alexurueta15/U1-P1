@@ -11,6 +11,12 @@ self.addEventListener('activate', (event)=>{
 });
 
 self.addEventListener('fetch', (event)=>{
+    console.log(event.request.url)
+
+    if (event.request.url.includes('save')) {
+        let newResponse = new Response("not today.");
+        event.respondWith(newResponse); 
+    }
    
     if (event.request.url.includes('.jpg')) {
         console.log(event.request.url);
