@@ -1,7 +1,7 @@
 console.log("hello from sw uwu.js");
 
 const contextSW =
-    window.location.href.includes("localhost") ? "/" : "/" + window.location.href.split('/', 4)[3] + "/";
+    location.href.includes("localhost") ? "/" : "/" + location.href.split('/', 4)[3] + "/";
 
 self.addEventListener('install', (event) => {
     console.log("Service worker installed");
